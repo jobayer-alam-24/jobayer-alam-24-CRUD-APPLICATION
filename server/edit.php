@@ -97,7 +97,7 @@ include("serverconnection.php");
                                 <label for="password">Password</label>
                                 <input type="text" class="form-control" id="password" name="password" value="<?php echo $password; ?>" required>
                             </div>
-                            <button type="submit" name="submit" class="btn btn-info btn-block">Register</button>
+                            <button type="submit" name="submit" class="btn btn-info btn-block">Save Changes</button>
                         </form>
                     </div>
                 </div>
