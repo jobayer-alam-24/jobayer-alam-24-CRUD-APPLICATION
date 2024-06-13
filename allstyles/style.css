@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #4CAF50; /* Set the background color for the navigation bar */
+    padding: 14px 20px; /* Add padding to the navigation bar */
+}
+
+.navbar ul {
+    list-style: none; /* Remove the bullets */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Align the menu items */
+}
+.mavbar ul li{
+   width: 50%; 
+}
+.mavbar ul li a:first-child{
+  border-right: 2px solid red;
+}
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    transition: width 0.5s ease; /* Add transition for smooth animation */
+}
+
+.navbar a:hover {
+    border-bottom: 1px solid white;
+}
+
+/* Body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title styles */
+.container-form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-size: 28px;
+}
+
+/* Form input styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Login link styles */
+.cs-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 16px;
+}
+.btn{
+    text-align: center;
+}
+.btn button{
+    color: white;
+    background-color: rgb(109, 156, 38);
+    font-size: 1.2rem;
+    border: none;
+    padding: .5rem .3rem;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+}
