@@ -36,8 +36,7 @@ include("serverconnection.php");
       </thead>
       <tbody>
         <?php
-        $queryGet = "SELECT * FROM user_signup_info";
-        $fetchAuthors = mysqli_query($conn, $queryGet);
+        $fetchAuthors = $conn->select();
 
         if (mysqli_num_rows($fetchAuthors) > 0) {
           while ($dataAsRow = mysqli_fetch_assoc($fetchAuthors)) {

@@ -13,15 +13,7 @@
         if(empty($full_name) || empty($phone_number) || empty($email) || empty($passwordCheck) || empty($confirm_pass)){
             echo "Please fill out all the fields!";
         }else{
-            $query = "INSERT INTO user_signup_info(name, phone_number, email, password, confirm_password) VALUES ('$full_name','$phone_number','$email','$passwordCheck','$confirm_pass')";
-
-            $sendData = mysqli_query($conn, $query) or die(mysqli_error($conn));
-            if($sendData){
-                header("Location: index.php");
-            }else{
-                echo "Failed! to send Data";
-                die();
-            }
+            $conn->insert($full_name, $phone_number, $email, $passwordCheck, $confirm_pass);
         }  
     }
 ?>

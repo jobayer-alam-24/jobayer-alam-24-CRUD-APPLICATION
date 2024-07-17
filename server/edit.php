@@ -3,8 +3,7 @@ include("serverconnection.php");
 ?>
 <?php
     $id = $_POST["id"];
-    $query = 'SELECT * FROM user_signup_info WHERE id = ' . $id;
-    $result = mysqli_query($conn, $query);
+    $result = $conn->edit($id);
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['id'];
         $name = $row['name'];
@@ -21,9 +20,8 @@ include("serverconnection.php");
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "UPDATE user_signup_info SET name = '$name', phone_number = '$phoneNumber', email = '$email', password = '$password' WHERE id = $id";
 
-        $submit = mysqli_query($conn, $query);
+        $submit = $conn->EditSubmit($name, $phoneNumber, $email, $password, $id);
         if($submit){
             header("Location: datatable.php");    
         }
