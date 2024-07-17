@@ -2,7 +2,7 @@
 
 interface DatabaseOperations
 {
-    public function insert($name, $phone, $email, $pass, $conPassword);
+    public function insert($name, $phone, $email, $pass, $conPassword, $image);
     public function select();
     public function edit($id);
     public function editSubmit($name, $phoneNumber, $email, $password, $id);
@@ -36,8 +36,8 @@ class DataBaseConnection implements DatabaseOperations {
         $this->connectDatabase();
     }
 
-    public function insert($name, $phone, $email, $pass, $conPassword){
-        $query = "INSERT INTO user_signup_info(name, phone_number, email, password, confirm_password) VALUES ('$name','$phone','$email','$pass','$conPassword')";
+    public function insert($name, $phone, $email, $pass, $conPassword, $image){
+        $query = "INSERT INTO user_signup_info(name, phone_number, email, password, confirm_password, image) VALUES ('$name','$phone','$email','$pass','$conPassword', '$image')";
 
         if(mysqli_query($this->connect, $query)){
             // echo "Inserted";

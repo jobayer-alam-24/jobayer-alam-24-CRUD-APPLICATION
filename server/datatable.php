@@ -30,6 +30,7 @@ include("serverconnection.php");
           <th>Phone Number</th>
           <th>Email</th>
           <th>Password</th>
+          <th>Image</th>
           <th style="background-color: #25c41f;">Change Action</th>
           <th style="background-color: #cc1f47;">Remove Action</th>
         </tr>
@@ -46,6 +47,8 @@ include("serverconnection.php");
             $phone_number = htmlspecialchars($dataAsRow['phone_number']);
             $email = htmlspecialchars($dataAsRow['email']);
             $password = htmlspecialchars($dataAsRow['password']);
+            $image = htmlspecialchars($dataAsRow['image']);
+
             
               echo
               "<tr>
@@ -54,6 +57,7 @@ include("serverconnection.php");
               <td>" . $phone_number . "</td>
               <td>" . $email . "</td>
               <td>" . $password . "</td>
+              <td><img src='" . $image . "' alt='Profile'/></td>
               <td id='action'>
                 <form method='post' action='edit.php'>
                   <input type='hidden' name='id' value='" . $id . "'/>

@@ -9,11 +9,21 @@
         $email = $_POST["mail"];
         $passwordCheck = $_POST["password"];
         $confirm_pass = $_POST["passConfirm"];
+        $image = $_FILES['image-upload']['tmp_name'];
+
+        $fileName = $_FILES['image-upload']['name'];
+        $tempLoc = $_FILES['image-upload']['tmp_name'];
+        $upLoc = "./server/serverImages".$fileName;
+        if(move_uploaded_file($tempLoc, $upLoc)){
+            // echo "Uploaded";
+        }else{
+            echo "Error ";
+        }
 
         if(empty($full_name) || empty($phone_number) || empty($email) || empty($passwordCheck) || empty($confirm_pass)){
             echo "Please fill out all the fields!";
         }else{
-            $conn->insert($full_name, $phone_number, $email, $passwordCheck, $confirm_pass);
+            $conn->insert($full_name, $phone_number, $email, $passwordCheck, $confirm_pass, $upLoc);
         }  
     }
 ?>
@@ -55,6 +65,10 @@
             <div>
                 <label for="pass">Confirm Password</label>
                 <input type="password" name="passConfirm" id="pass2" minlength="4" maxlength="20" required placeholder="Retype your password">
+            </div>
+            <label for="image-upload">Upload Image</label>
+            <div id="image-upload-div">
+                <input type="file" name="image-upload" id="image-upload" accept="image/*" required>
             </div>
             <p class="btn"><button type="submit" name="submit" value="submit" >Submit</button></p>
             <a href="#" class="cs-btn">Login here</a>
