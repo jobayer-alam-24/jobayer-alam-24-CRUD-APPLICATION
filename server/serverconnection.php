@@ -22,9 +22,9 @@
 
         }
        public function insert($name, $phone, $email, $pass, $conPassword){
-        $sql = "INSERT INTO user_signup_info(name, phone_number, email, password, confirm_password) VALUES ('$name','$phone','$email','$pass','$conPassword')";
+        $query = "INSERT INTO user_signup_info(name, phone_number, email, password, confirm_password) VALUES ('$name','$phone','$email','$pass','$conPassword')";
 
-        if(mysqli_query($this->connect, $sql) == True){
+        if(mysqli_query($this->connect, $query) == True){
             // echo "Inserted";
         }else{
             echo "Error: " + mysqli_error($this->connect);
